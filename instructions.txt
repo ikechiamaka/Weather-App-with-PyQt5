@@ -1,0 +1,64 @@
+sudo apt update
+sudo apt upgrade
+sudo apt-get install python3-pyqt5 python3-requests
+sudo apt install python3-pyqt5.qtwebkit
+sudo pip3 install Flask
+
+
+1. Initial Setup:
+1.1. Operating System:
+Ensure you have Raspbian OS (or Raspberry Pi OS) installed on your Raspberry Pi. If not, you can download it from the official site.
+
+1.2. SSH (optional):
+If you're working remotely, enable SSH on your Pi:
+
+Open terminal on your Pi and run:
+
+	sudo raspi-config
+
+Navigate to Interface Options > SSH and enable it.
+
+Now you can access your Raspberry Pi remotely using SSH.
+
+2. Installing Required Packages:
+2.1. Update and Upgrade:
+Before installing anything, always update and upgrade:
+
+	sudo apt update && sudo apt upgrade -y
+
+2.2. Install PyQt5:
+
+	sudo apt-get install python3-pyqt5
+	sudo apt install python3-pyqt5.qtwebkit
+
+2.3. Install Flask:
+	sudo pip3 install Flask
+
+2.4. Install Requests:
+
+	sudo pip3 install requests
+
+3. Set Up Your Project:
+
+3.1. Flask Template:
+Make sure you have a templates folder in the same directory as your Flask app. Inside this folder, place your map.html file, so Flask can find and render it.
+
+4. Running the Application:
+4.1. Start Flask:
+Navigate to the directory where your Flask app is:
+
+	cd /path/to/your/app
+
+Then, run the Flask app:
+
+	python3 app.py
+
+This will start Flask, and it will be accessible from any device on your network using the Raspberry Pi's IP address followed by :5000.
+
+4.2. Start the PyQt Application:
+On the Raspberry Pi, navigate to your project folder and run:
+
+	python3 PyQtAPP_RPI.py
+
+This will launch your PyQt application.
+

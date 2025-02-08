@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RainViewer Radar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+    <div id="map" style="width: 100%; height: 710px;"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([40.7128, -74.006], 10);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        if ("{{ latest_timestamp }}") {
+            var radarLayer = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/{{ latest_timestamp }}/256/{z}/{x}/{y}/7/1_1.png', {
+                tileSize: 256,
+                opacity: 83,
+                zIndex: 100,
+                attribution: 'Radar data provided by RainViewer.com'
+            });
+            radarLayer.addTo(map);
+        }
+    </script>
+</body>
+
+</html>
