@@ -10,12 +10,7 @@ A weather monitoring application built using PyQt5 that displays weather alerts,
 - [Features](#features)
 - [Demo](#demo)
 - [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Code Structure](#code-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Final Thoughts](#final-thoughts)
+
 
 ---
 
